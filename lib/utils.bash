@@ -87,9 +87,8 @@ install_version() {
     tar -xzf "$release_file" -C "$install_path" || fail "Could not extract $release_file"
     rm "$release_file"
 
-    # TODO: Asert nuclei executable exists.
     local tool_cmd
-    tool_cmd="$(echo "nuclei --version" | cut -d' ' -f2-)"
+    tool_cmd="nuclei --version"
     test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
     echo "nuclei $version installation was successful!"
