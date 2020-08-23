@@ -11,7 +11,6 @@ fail() {
 
 curl_opts=(-fsSL)
 
-# NOTE: You might want to remove this if nuclei is not hosted on GitHub releases.
 if [ -n "${GITHUB_API_TOKEN:-}" ]; then
   curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
 fi
@@ -83,7 +82,6 @@ install_version() {
     tar -xzf "$release_file" -C "$install_path/bin" || fail "Could not extract $release_file"
     rm "$release_file"
 
-    # TODO: Asert nuclei executable exists.
     local tool_cmd
     tool_cmd="nuclei"
     test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
