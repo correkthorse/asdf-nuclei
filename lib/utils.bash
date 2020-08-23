@@ -80,7 +80,7 @@ install_version() {
     fail "asdf-nuclei does not support windows installs"
   fi
 
-  local release_file="$install_path/nuclei-$version.$(get_file_ext)"
+  local release_file="$install_path/nuclei-$version.tar.gz"
   (
     mkdir -p "$install_path"
     download_release "$version" "$release_file"
