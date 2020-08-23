@@ -86,6 +86,7 @@ install_version() {
     download_release "$version" "$release_file"
     tar -xzf "$release_file" -C "$install_path" || fail "Could not extract $release_file"
     rm "$release_file"
+    ls -alt "$install_path/"
 
     local tool_cmd
     tool_cmd="nuclei --version"
