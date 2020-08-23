@@ -89,7 +89,7 @@ install_version() {
 
     # TODO: Asert nuclei executable exists.
     local tool_cmd
-    tool_cmd="$(echo "nuclei --version" | cut -d' ' -f2-)"
+    tool_cmd="nuclei"
     test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
     echo "nuclei $version installation was successful!"
