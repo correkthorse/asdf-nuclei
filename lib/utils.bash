@@ -85,8 +85,7 @@ install_version() {
     fail "asdf-nuclei supports release installs only"
   fi
 
-  # TODO: Adapt this to proper extension and adapt extracting strategy.
-  local release_file="$install_path/nuclei-$version.tar.gz"
+  local release_file="$install_path/nuclei-$version.$(get_file_ext)"
   (
     mkdir -p "$install_path"
     download_release "$version" "$release_file"
