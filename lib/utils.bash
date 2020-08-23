@@ -39,7 +39,7 @@ get_os () {
   case $(uname) in
     Linux)    os="linux" ;;
     Windows)  os="windows" ;;
-    Darwin)      os="macOS" ;;
+    Darwin)   os="macOS" ;;
   esac
   echo ${os}
 }
