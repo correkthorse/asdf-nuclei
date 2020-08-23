@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for nuclei.
-GH_REPO="https://github.com/projectdiscovery/nuclei/releases/"
+GH_REPO="https://github.com/projectdiscovery/nuclei"
 
 fail() {
   echo -e "asdf-nuclei: $*"
