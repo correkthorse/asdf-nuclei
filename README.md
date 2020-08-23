@@ -59,4 +59,4 @@ Contributions of any kind welcome! See the [contributing guide](contributing.md)
 
 # License
 
-See [LICENSE](LICENSE) © [Tim Koopmans](https://github.com/correkthorse/)
+See [LICENSE](LICENSE) © [projectdiscovery](https://projectdiscovery.io/)
