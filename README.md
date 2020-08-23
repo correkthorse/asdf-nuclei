@@ -17,7 +17,6 @@
 # Dependencies
 
 - `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
 
 # Install
 
@@ -47,6 +46,10 @@ nuclei --version
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
+
+# Why
+
+Nuclei is a fast tool for configurable targeted scanning based on templates offering massive extensibility and ease of use.
 
 # Contributing
 
