@@ -26,7 +26,7 @@ Plugin:
 ```shell
 asdf plugin add nuclei
 # or
-asdf plugin add https://github.com/correkthorse/asdf-nuclei.git
+asdf plugin add nuclei https://github.com/correkthorse/asdf-nuclei.git
 ```
 
 nuclei:
