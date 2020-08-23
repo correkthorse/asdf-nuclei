@@ -24,6 +24,7 @@ list_github_tags() {
   git ls-remote --tags --refs "$GH_REPO" |
     grep -o 'refs/tags/.*' | cut -d/ -f3- |
     sed 's/^v//'
+}
 
 list_all_versions() {
   list_github_tags
@@ -82,6 +83,7 @@ install_version() {
     tar -xzf "$release_file" -C "$install_path/bin" || fail "Could not extract $release_file"
     rm "$release_file"
 
+    # TODO: Asert nuclei executable exists.
     local tool_cmd
     tool_cmd="nuclei"
     test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
