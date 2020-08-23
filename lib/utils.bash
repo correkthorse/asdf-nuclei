@@ -55,18 +55,9 @@ get_arch () {
   echo ${architecture}
 }
 
-get_file_ext () {
-  local file_ext=""
-  case $(get_os) in
-    windows)  file_ext="zip" ;;
-    *)        file_ext="tar.gz" ;;
-  esac
-  echo ${file_ext}
-}
-
 download_release() {
   local version filename url
-  local suffix="$(get_os)_$(get_arch).$(get_file_ext)"
+  local suffix="$(get_os)_$(get_arch).tar.gz"
   version="$1"
   filename="$2"
 
@@ -83,6 +74,10 @@ install_version() {
 
   if [ "$install_type" != "version" ]; then
     fail "asdf-nuclei supports release installs only"
+  fi
+
+  if [ "$(get_os)" == "window" ]; then
+    fail "asdf-nuclei does not support windows installs"
   fi
 
   local release_file="$install_path/nuclei-$version.$(get_file_ext)"
