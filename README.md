@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-nuclei ![Build](https://github.com/timkoopmans/asdf-nuclei/workflows/Build/badge.svg) ![Lint](https://github.com/timkoopmans/asdf-nuclei/workflows/Lint/badge.svg)
+# asdf-nuclei ![Build](https://github.com/correkthorse/asdf-nuclei/workflows/Build/badge.svg) ![Lint](https://github.com/correkthorse/asdf-nuclei/workflows/Lint/badge.svg)
 
 [nuclei](https://nuclei.projectdiscovery.io/) plugin for the [asdf version manager](https://asdf-vm.com).
 
@@ -26,7 +26,7 @@ Plugin:
 ```shell
 asdf plugin add nuclei
 # or
-asdf plugin add https://github.com/timkoopmans/asdf-nuclei.git
+asdf plugin add https://github.com/correkthorse/asdf-nuclei.git
 ```
 
 nuclei:
@@ -52,8 +52,8 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/timkoopmans/asdf-nuclei/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/correkthorse/asdf-nuclei/graphs/contributors)!
 
 # License
 
-See [LICENSE](LICENSE) © [Tim Koopmans](https://github.com/timkoopmans/)
+See [LICENSE](LICENSE) © [Tim Koopmans](https://github.com/correkthorse/)
