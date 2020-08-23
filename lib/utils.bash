@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euox pipefail
+set -euo pipefail
 
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for nuclei.
 GH_REPO="https://github.com/projectdiscovery/nuclei"
