@@ -34,12 +34,34 @@ list_all_versions() {
   list_github_tags
 }
 
+get_os () {
+  local os=""
+  case $(uname) in
+      Linux)    os="linux" ;;
+      Windows)  os="windows" ;;
+      mac)      os="macOS" ;;
+  esac
+  echo ${os}
+}
+
+get_arch () {
+  local architecture=""
+  case $(uname -m) in
+      i386)   architecture="386" ;;
+      i686)   architecture="386" ;;
+      x86_64) architecture="amd64" ;;
+      arm)    dpkg --print-architecture | grep -q "arm64" && architecture="arm64" || architecture="arm" ;;
+  esac
+  echo ${architecture}
+}
+
 download_release() {
   local version filename url
+  local platform="$(get_os)_$(get_arch)"
   version="$1"
   filename="$2"
 
-  url="$GH_REPO/releases/download/v${version}.tar.gz"
+  url="$GH_REPO/releases/download/nuclei_${platform}_${version}).tar.gz"
 
   echo "* Downloading nuclei release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
