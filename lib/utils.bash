@@ -30,23 +30,23 @@ list_all_versions() {
   list_github_tags
 }
 
-get_os () {
+get_os() {
   local os=""
   case $(uname) in
-    Linux)    os="linux" ;;
-    Windows)  os="windows" ;;
-    Darwin)   os="macOS" ;;
+    Linux) os="linux" ;;
+    Windows) os="windows" ;;
+    Darwin) os="macOS" ;;
   esac
   echo ${os}
 }
 
-get_arch () {
+get_arch() {
   local architecture=""
   case $(uname -m) in
-    i386)   architecture="386" ;;
-    i686)   architecture="386" ;;
+    i386) architecture="386" ;;
+    i686) architecture="386" ;;
     x86_64) architecture="amd64" ;;
-    arm)    dpkg --print-architecture | grep -q "arm64" && architecture="arm64" || architecture="arm" ;;
+    arm) dpkg --print-architecture | grep -q "arm64" && architecture="arm64" || architecture="arm" ;;
   esac
   echo ${architecture}
 }
