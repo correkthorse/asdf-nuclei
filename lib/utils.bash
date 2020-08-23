@@ -47,21 +47,30 @@ get_os () {
 get_arch () {
   local architecture=""
   case $(uname -m) in
-      i386)   architecture="386" ;;
-      i686)   architecture="386" ;;
-      x86_64) architecture="amd64" ;;
-      arm)    dpkg --print-architecture | grep -q "arm64" && architecture="arm64" || architecture="arm" ;;
+    i386)   architecture="386" ;;
+    i686)   architecture="386" ;;
+    x86_64) architecture="amd64" ;;
+    arm)    dpkg --print-architecture | grep -q "arm64" && architecture="arm64" || architecture="arm" ;;
   esac
   echo ${architecture}
 }
 
+get_file_ext () {
+  local file_ext=""
+  case $(get_os) in
+    windows)  file_ext="zip" ;;
+    *)        file_ext="tar.gz" ;;
+  esac
+  echo ${file_ext}
+}
+
 download_release() {
   local version filename url
-  local platform="$(get_os)_$(get_arch)"
+  local suffix="$(get_os)_$(get_arch).$(get_file_ext)"
   version="$1"
   filename="$2"
 
-  url="${GH_REPO}/releases/download/${version}/nuclei_${version}_${platform}.tar.gz"
+  url="${GH_REPO}/releases/download/${version}/nuclei_${version}_${suffix}"
 
   echo "* Downloading nuclei release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
