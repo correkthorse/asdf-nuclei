@@ -37,9 +37,9 @@ list_all_versions() {
 get_os () {
   local os=""
   case $(uname) in
-      Linux)    os="linux" ;;
-      Windows)  os="windows" ;;
-      mac)      os="macOS" ;;
+    Linux)    os="linux" ;;
+    Windows)  os="windows" ;;
+    mac)      os="macOS" ;;
   esac
   echo ${os}
 }
