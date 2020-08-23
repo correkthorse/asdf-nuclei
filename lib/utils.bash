@@ -70,7 +70,7 @@ download_release() {
   version="$1"
   filename="$2"
 
-  url="${GH_REPO}/releases/download/${version}/nuclei_${version}_${suffix}"
+  url="${GH_REPO}/releases/download/v${version}/nuclei_${version}_${suffix}"
 
   echo "* Downloading nuclei release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
